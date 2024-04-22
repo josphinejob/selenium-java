@@ -1,3 +1,4 @@
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.ConfirmationPage;
@@ -6,7 +7,8 @@ import pages.FormPage;
 import static org.junit.Assert.assertEquals;
 
 public class FillAndSubmitFormTest {
-    public static void main(String[] args) {
+    @Test
+    public void fillAndSubmitFormTest() {
         WebDriver driver = new ChromeDriver();
         FormPage formPage = new FormPage();
         ConfirmationPage confirmationPage = new ConfirmationPage();

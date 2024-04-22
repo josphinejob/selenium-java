@@ -1,3 +1,4 @@
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.FormPage;
@@ -6,7 +7,9 @@ import pages.ConfirmationPage;
 import static org.junit.Assert.assertEquals;
 
 public class FormTest {
-    public static void main(String[] args) {
+
+    @Test
+    public void submitFormTest() {
 
         System.setProperty("webdriver.chrome.driver", "/Users/jobj/Downloads/chromedriver");
 
