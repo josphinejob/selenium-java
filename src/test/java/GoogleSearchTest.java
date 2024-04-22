@@ -1,10 +1,13 @@
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class GoogleSearchTest {
-    public static void main(String[] args) {
+
+    @Test
+    public void googleSearchTest() {
 
         // Set the property for webdriver.chrome.driver to be the location to your local download of chromedriver
         System.setProperty("webdriver.chrome.driver", "/Users/jobj/Downloads/chromedriver");
