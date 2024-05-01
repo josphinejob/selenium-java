@@ -1,12 +1,14 @@
-import org.junit.Test;
+package experiments;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 public class GoogleSearchTest {
 
-    @Test
+    @Test(groups = {"sanity"})
     public void googleSearchTest() {
 
         // Set the property for webdriver.chrome.driver to be the location to your local download of chromedriver

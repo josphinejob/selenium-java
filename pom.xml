@@ -12,22 +12,25 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <timestamp>${maven.build.timestamp}</timestamp>
-        <maven.build.timestamp.format>yyyy-MM-dd_HH-mm</maven.build.timestamp.format>
+        <maven.build.timestamp.format>yyyy-MM-dd'T'HH.mm.ss</maven.build.timestamp.format>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <reporting>
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-report-plugin</artifactId>
+                <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
                 <configuration>
-                    <outputName>test_report_${timestamp}</outputName>
+                    <suiteXmlFiles>
+                        <file>src/test/resources/runner/testng.xml</file>
+                    </suiteXmlFiles>
+                    <reportNameSuffix>custom</reportNameSuffix>
                 </configuration>
             </plugin>
         </plugins>
-    </reporting>
+    </build>
 
     <dependencies>
         <dependency>
@@ -36,9 +39,9 @@
             <version>3.141.59</version>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.9.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

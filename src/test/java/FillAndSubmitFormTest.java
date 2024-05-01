@@ -1,13 +1,12 @@
-import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 import pages.ConfirmationPage;
 import pages.FormPage;
 
-import static org.junit.Assert.assertEquals;
-
 public class FillAndSubmitFormTest {
-    @Test
+    @Test(groups = {"sanity"})
     public void fillAndSubmitFormTest() {
         WebDriver driver = new ChromeDriver();
         FormPage formPage = new FormPage();
@@ -30,7 +29,7 @@ public class FillAndSubmitFormTest {
 
         //confirm the submission success
         confirmationPage.waitForAlertBanner(driver);
-        assertEquals("The form was successfully submitted!", confirmationPage.getAlertBannerText(driver));
+        Assert.assertEquals("The form was successfully submitted!", confirmationPage.getAlertBannerText(driver));
 
         //close browser
         driver.quit();
