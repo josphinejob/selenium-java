@@ -1,14 +1,13 @@
-import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 import pages.FormPage;
 import pages.ConfirmationPage;
 
-import static org.junit.Assert.assertEquals;
-
 public class FormTest {
 
-    @Test
+    @Test(groups = {"sample"})
     public void submitFormTest() {
 
         System.setProperty("webdriver.chrome.driver", "/Users/jobj/Downloads/chromedriver");
@@ -23,7 +22,7 @@ public class FormTest {
         ConfirmationPage confirmationPage = new ConfirmationPage();
         confirmationPage.waitForAlertBanner(driver);
 
-        assertEquals("The form was successfully submitted!", confirmationPage.getAlertBannerText(driver));
+        Assert.assertEquals("The form was successfully submitted!", confirmationPage.getAlertBannerText(driver));
 
         driver.quit();
     }
